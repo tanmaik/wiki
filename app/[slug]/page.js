@@ -1,7 +1,7 @@
 import { openai } from "@ai-sdk/openai";
 import { generateObject } from "ai";
 import { z } from "zod";
-import SearchBar from "./[slug]/SearchBar";
+import SearchBar from "./SearchBar";
 import Link from "next/link";
 
 // Helper function to convert text to slug
@@ -46,9 +46,9 @@ function RenderWithHyperlinks({ text }) {
   );
 }
 
-export default async function Home() {
-  const input = "Wikipedia";
-
+export default async function Home({ params }) {
+  const input = params.slug || "Wikipedia";
+  
   const { object } = await generateObject({
     model: openai("gpt-4"),
     schema: z.object({

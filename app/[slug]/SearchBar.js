@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
 
   const handleSearch = (event) => {
@@ -20,10 +20,12 @@ export default function SearchBar() {
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Search Wikipedia..."
+        placeholder="search aipedia..."
         className="w-full p-2 border border-gray-300 rounded"
       />
-      <button type="submit" className="hidden">Search</button>
+      <button type="submit" className="hidden">
+        Search
+      </button>
     </form>
   );
 }
