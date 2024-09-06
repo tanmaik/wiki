@@ -48,9 +48,9 @@ function RenderWithHyperlinks({ text }) {
 
 export default async function Home({ params }) {
   const input = params.slug || "Wikipedia";
-  
+
   const { object } = await generateObject({
-    model: openai("gpt-4"),
+    model: openai("gpt-4o-mini"),
     schema: z.object({
       wikipedia_article_title: z.string(),
       wikipedia_article_initial_summary: z.string(),
