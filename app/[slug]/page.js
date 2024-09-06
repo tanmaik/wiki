@@ -69,6 +69,8 @@ export default async function Home({ params }) {
     prompt: `Create a long-form Wikipedia style article about: ${input}. Include an info card with relevant categories and their corresponding values. For each section, provide a header and detailed content, and create many different sections. Also, provide an array of potential hyperlinks (important keywords or phrases) that could be linked to other Wikipedia articles.`,
   });
 
+ 
+
   // Process the content to add hyperlinks
   const processedSummary = addHyperlinks(
     object.wikipedia_article_initial_summary,
